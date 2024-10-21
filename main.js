@@ -130,13 +130,58 @@
 // console.log(user.fullName);
 
 
-// // // Function methods
-let x = {'a':2, 'b':'hello', 'add': function(a,b) {return a+b+this.a}}
-console.log(x.add(1,2)); // method 1
+// // // // Function methods // // // // 
 
-console.log(x.add(1,2,3)); // this will ignore the extra argument - method 2
 
-let z= x.add; //call() - method 3
-console.log(z.call(x,1,2)); // 'x' here is the reference object to give the context
+// let x = {'a':2, 'b':'hello', 'add': function(a,b) {return a+b+this.a}}
+// console.log(x.add(1,2)); // method 1
+
+// console.log(x.add(1,2,3)); // this will ignore the extra argument - method 2
+
+// let z= x.add; //call() - method 3
+// console.log(z.call(x,1,2)); // 'x' here is the reference object to give the context
+
+// console.log(z.apply(x,[1,2])); // apply() - method 4 - spreads the arguments - extra arguments are ignored
+
+// //bind - closure
+// let z2 = z.bind(x, 2); // now 2 is fixed as the first argument
+// console.log(z2(3)); // 2+3+2 = 7
+
+
+// // Prototypes // // //
+
+// const x= {a: 1, inc: function() {this.a++;}};
+// console.log(x);
+// const y= {__proto__: x, b: 2};
+// console.log(y); // y has a and b
+// console.log(y.a); // calling a from x using y
+// y.inc(); // incrementing a in x using y
+// console.log(y.a); // calling a from x using y after incrementing
+
+
+
+// // // // Classes // // // //
+
+// class Animal{
+//     constructor(name) {
+//         this.name = name;
+//     }
+//     describe() {
+//         return `I am ${this.name} and I make ${this.sound}`;
+//     }
+// }
+
+// let x= new Animal('jerry');
+// console.log(x.describe()); // This will give error as sound is not defined
+
+// class Dog extends Animal { // Inheritance
+//     constructor(name) {
+//         super(name);
+//         this.sound = 'bark';
+//     }
+// }
+
+// let d= new Dog('Tom');
+// console.log(d.describe()); // This will give the correct output
 
 

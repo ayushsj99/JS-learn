@@ -184,4 +184,29 @@
 // let d= new Dog('Tom');
 // console.log(d.describe()); // This will give the correct output
 
+// class cat extends Animal {
+//     constructor(name) {
+//         super(name);
+//         this.sound = 'meow';
+//     }
+//     static fromJson(o){
+//         c= new cat(o.name);
+//         c.sound= o.sound;
+//         return c;
+//     }
+// }
+
+// let c = new cat('Tom');
+// console.log(c.describe());
+
+
+
+// // // // JSON Back and forth // // // //
+
+// let p = JSON.stringify(c);
+// console.log(c);
+// console.log(p);
+
+// let cc= cat.fromJson(JSON.parse(p));
+// console.log(cc.describe());
 
